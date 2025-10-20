@@ -1,0 +1,39 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="alwaysbacktank"
+version="1.0.0"
+displayName="Always Backtank"
+authors="YourName"
+description='''Always shows the Create backtank overlay.'''
+
+[[dependencies.alwaysbacktank]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.alwaysbacktank]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1]"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.alwaysbacktank]]
+modId = "yet_another_config_lib_v3"
+mandatory=true
+versionRange="[3.6.1,)"
+ordering="AFTER"
+side="CLIENT"
+
+
+[[dependencies.alwaysbacktank]]
+    modId="curios"
+    mandatory=false
+    versionRange="[5,)" # 5.x.x Curios versions are compatible with 1.20.1
+    ordering="AFTER"
+    side="BOTH"
