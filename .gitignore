@@ -1,0 +1,10 @@
+build/
+run/
+/.gradle
+.gradle/
+.idea/
+*.iml
+.vscode
+.idea
+push.ps1
+.vs/
