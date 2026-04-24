@@ -2,9 +2,9 @@ package net.pat600.fabric;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.pat600.ExampleMod;
+import net.pat600.AlwaysBacktankMod;
 
-public final class ExampleModFabric implements ModInitializer {
+public final class AlwaysBacktankModFabric implements ModInitializer {
     @Override
     public void onInitialize() {
         // This code runs as soon as Minecraft is in a mod-load-ready state.
@@ -12,6 +12,6 @@ public final class ExampleModFabric implements ModInitializer {
         // Proceed with mild caution.
 
         // Run our common setup.
-        ExampleMod.init();
+        AlwaysBacktankMod.init();
     }
 }

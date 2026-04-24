@@ -1,25 +1,25 @@
 {
   "schemaVersion": 1,
-  "id": "template",
+  "id": "alwaysbacktank",
   "version": "${version}",
-  "name": "template",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "AlwaysBacktank",
+  "description": "Always shows the Create backtank overlay.",
   "authors": [
-    "Me!"
+    "pat600130"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
     "sources": "https://github.com/FabricMC/fabric-example-mod"
   },
   "license": "CC0-1.0",
-  "icon": "assets/template/icon.png",
+  "icon": "assets/AlwaysBacktank/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.pat600.fabric.ExampleModFabric"
+      "net.pat600.fabric.AlwaysBacktankModFabric"
     ],
     "client": [
-      "net.pat600.fabric.client.ExampleModFabricClient"
+      "net.pat600.fabric.client.AlwaysBacktankModFabricClient"
     ]
   },
   "mixins": [
@@ -29,7 +29,8 @@
     "fabricloader": ">=0.19.2",
     "minecraft": "~1.21.1",
     "java": ">=21",
-    "fabric-api": "*"
+    "fabric-api": "*",
+    "create": "*"
   },
   "suggests": {
     "another-mod": "*"

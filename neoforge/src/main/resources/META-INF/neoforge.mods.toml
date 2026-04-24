@@ -4,28 +4,34 @@ loaderVersion = "[4,)"
 license = "Insert License Here"
 
 [[mods]]
-modId = "template"
+modId = "alwaysbacktank"
 version = "${version}"
-displayName = "template"
-authors = "Me!"
+displayName = "AlwaysBacktank"
+authors = "pat600130"
 description = '''
-This is an example description! Tell everyone what your mod is about!
-'''
+Always shows the Create backtank overlay.'''
 #logoFile = ""
 
-[[dependencies.template]]
+[[dependencies.alwaysbacktank]]
 modId = "neoforge"
 type = "required"
 versionRange = "[21.1,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.template]]
+[[dependencies.alwaysbacktank]]
 modId = "minecraft"
 type = "required"
 versionRange = "[1.21.1,)"
 ordering = "NONE"
 side = "BOTH"
 
+[[dependencies.alwaysbacktank]]
+modId = "create"
+type = "required"
+versionRange = "*"
+ordering = "NONE"
+side = "BOTH"
+
 [[mixins]]
-config = "template.mixins.json"
+config = "alwaysbacktank.mixins.json"

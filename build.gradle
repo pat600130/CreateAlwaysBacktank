@@ -34,13 +34,32 @@ subprojects {
     loom {
         silentMojangMappingsLicense()
     }
+    allprojects {
+        group = rootProject.maven_group
+        version = rootProject.mod_version
+
+        repositories {
+            maven {
+                name = 'ParchmentMC'
+                url = 'https://maven.parchmentmc.org'
+            }
+            maven {
+                name = 'catnip'
+                url = 'https://maven.createmod.net/'
+            }
+            maven { url = "https://maven.createmod.net" }
+            maven { url = "https://maven.ithundxr.dev/snapshots" }
+        }
+    }
 
     dependencies {
         minecraft "net.minecraft:minecraft:$rootProject.minecraft_version"
         mappings loom.layered {
             officialMojangMappings()
-            parchment("org.parchmentmc.data:parchment-1.21.1:2023.09.03@zip")
-        }    }
+            parchment("org.parchmentmc.data:parchment-1.21.1:2024.11.17@zip")
+        }
+
+    }
 
     java {
         // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
