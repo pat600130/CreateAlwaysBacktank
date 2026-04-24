@@ -8,3 +8,4 @@ run/
 .idea
 push.ps1
 .vs/
+/fabric
