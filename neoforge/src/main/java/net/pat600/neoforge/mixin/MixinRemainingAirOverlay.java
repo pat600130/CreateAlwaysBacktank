@@ -13,6 +13,7 @@ import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.world.effect.MobEffectUtil;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.StringUtil;
 import net.minecraft.world.item.ItemStack;
@@ -29,11 +30,11 @@ import static com.simibubi.create.content.equipment.armor.RemainingAirOverlay.ge
 @Mixin(value = com.simibubi.create.content.equipment.armor.RemainingAirOverlay.class, priority = -100)
 public class MixinRemainingAirOverlay implements LayeredDraw.Layer {
 
-        /**
-         * @author pat600130
-         * @reason i dont know how to do this without copying the entire method, and want to avoid mixin conflicts with other mods that change this method + i dont know shit about mixins
-         */
-        @Overwrite
+    /**
+     * @author pat600130
+     * @reason i dont know how to do this without copying the entire method, and want to avoid mixin conflicts with other mods that change this method + i dont know shit about mixins
+     */
+    @Overwrite
     public void render(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
         Minecraft mc = Minecraft.getInstance();
         if (!mc.options.hideGui && mc.gameMode.getPlayerMode() != GameType.SPECTATOR) {
@@ -41,8 +42,8 @@ public class MixinRemainingAirOverlay implements LayeredDraw.Layer {
             if (player == null) {
                 return;
             }
-            boolean isAir;
-            boolean canBreathe;
+            boolean isAir = player.getEyeInFluidType().isAir() || player.level().getBlockState(BlockPos.containing(player.getX(), player.getEyeY(), player.getZ())).is(Blocks.BUBBLE_COLUMN);
+            boolean canBreathe = !player.canDrownInFluidType(player.getEyeInFluidType()) || MobEffectUtil.hasWaterBreathing(player) || player.getAbilities().invulnerable;
             int timeLeft =0;
             int maxAir =0;
             for (int i = 0; i < BacktankUtil.getAllWithAir(player).size(); i++) {
